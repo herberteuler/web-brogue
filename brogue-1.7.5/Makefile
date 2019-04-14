@@ -19,7 +19,7 @@ all : both
 endif
 
 %.o : %.c Makefile src/brogue/Rogue.h src/brogue/IncludeGlobals.h
-	$(CC) $(CFLAGS) -g -o $@ -c $< 
+	$(CC) $(CFLAGS) -g -o $@ -c $<
 
 BROGUEFILES=src/brogue/Architect.o \
 	src/brogue/Combat.o \
@@ -66,7 +66,7 @@ curses : LIBRARIES = ${CURSES_LIB}
 both : DEPENDENCIES += ${TCOD_DEP}
 both : DEFINES += ${TCOD_DEF} ${CURSES_DEF}
 both : LIBRARIES += ${TCOD_LIB} ${CURSES_LIB}
-	
+
 web : DEFINES += ${WEB_DEF}
 web : LIBRARIES += ${WEB_LIB}
 
@@ -102,7 +102,7 @@ endif
 bin/brogue : ${DEPENDENCIES} ${BROGUEFILES}
 	$(CC) -O2 -march=i586 -o bin/brogue ${BROGUEFILES} ${LIBRARIES} -Wl,-rpath,.
 
-clean : 
+clean :
 	rm -f src/brogue/*.o src/platform/*.o bin/brogue
 
 ${LIBTCODDIR} :
@@ -128,4 +128,3 @@ tar : both
 	$(wildcard src/brogue/*.h) \
 	$(wildcard src/platform/*.c) \
 	$(wildcard src/platform/*.h)
-

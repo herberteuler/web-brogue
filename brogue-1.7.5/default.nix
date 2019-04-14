@@ -14,6 +14,7 @@ stdenv.mkDerivation rec {
                     -e 's,sdl-config,${SDL.dev}/bin/sdl-config,g'
     sed -i src/platform/tcod-platform.c -e "s,fonts/font,$out/share/brogue/fonts/font,g"
     cp -pr ../brogue/bin .
+    chmod u+w bin
     make clean
     rm -rf src/libtcod*
   '';
