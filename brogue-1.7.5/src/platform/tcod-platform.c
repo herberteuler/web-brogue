@@ -642,7 +642,8 @@ struct brogueConsole tcodConsole = {
 	tcod_nextKeyOrMouseEvent,
 	tcod_plotChar,
 	tcod_remap,
-	modifier_held
+	modifier_held,
+        notify_event
 };
 
 #endif
