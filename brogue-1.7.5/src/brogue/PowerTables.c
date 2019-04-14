@@ -22,7 +22,6 @@
  */
 
 #include "Rogue.h"
-#include <math.h>
 
 // As of v1.7.5, Brogue does not use floating-point math in any calculations
 // that have an effect on substantive gameplay. The two operations that were
