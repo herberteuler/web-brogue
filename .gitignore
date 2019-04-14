@@ -38,3 +38,6 @@
 *.x86_64
 *.hex
 bin/
+
+## Nix files
+result
